@@ -244,6 +244,10 @@
   </footer>
 
   <script>
+    // Enable JS-only enhancements (scroll reveal). Without this class, all
+    // content stays visible — so the page is robust if scripts don't run.
+    document.documentElement.classList.add('js');
+
     // Sticky nav state
     const nav = document.getElementById('nav');
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);

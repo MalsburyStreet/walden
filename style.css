@@ -163,9 +163,14 @@ a { color: inherit; text-decoration: none; }
 .footer-links a:hover { color: #fff; }
 .footer-legal { padding-top: 1.6rem; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.45); }
 
-/* ---------- Reveal animation ---------- */
-.section, .anchor { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.section.in, .anchor.in { opacity: 1; transform: none; }
+/* ---------- Reveal animation (progressive enhancement) ---------- */
+/* Content is visible by default; only hidden when JS is present, so no-JS and
+   non-scripted renderers still see everything. */
+.js .section, .js .anchor { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js .section.in, .js .anchor.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .section, .js .anchor { opacity: 1; transform: none; transition: none; }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
