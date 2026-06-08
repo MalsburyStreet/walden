@@ -38,6 +38,7 @@ a { color: inherit; text-decoration: none; }
 .container { max-width: var(--max-w); margin: 0 auto; width: 100%; }
 .narrow { max-width: 760px; }
 .center-text { text-align: center; }
+.nowrap { white-space: nowrap; }
 .section { padding: var(--section-pad); }
 .bg-soft { background: var(--off-white); }
 
